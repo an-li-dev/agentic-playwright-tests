@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.local
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+test-results/
+playwright-report/
+
+# Allure
+allure-results/
+allure-report/
+
+# Playwright MCP
+.playwright-mcp/
+
+# Build output
+dist/
+
+# OS / editor
+.DS_Store

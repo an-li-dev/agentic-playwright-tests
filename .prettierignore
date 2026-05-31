@@ -1,0 +1,20 @@
+# Build & generated artifacts
+node_modules/
+dist/
+
+# Test reports
+allure-results/
+allure-report/
+playwright-report/
+test-results/
+
+# Lock files (formatting them causes unnecessary diffs)
+bun.lock
+bun.lockb
+package-lock.json
+
+# Shell scripts — keep original formatting
+scripts/
+
+# GitHub Actions YAML — managed separately
+.github/
