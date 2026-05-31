@@ -85,10 +85,13 @@ jobs:
         run: |
           GREP="${{ github.event.inputs.grep }}"
           WORKERS="${{ github.event.inputs.workers || '8' }}"
+          # --pass-with-no-tests keeps the gate green while this template repo has
+          # no real tests yet (template-*.spec.ts are excluded). Remove it once a
+          # @smoke/@critical-tagged test exists if you want an empty match to fail.
           if [ -n "$GREP" ]; then
-            bunx playwright test --project=chromium --grep "$GREP" --workers=$WORKERS
+            bunx playwright test --project=chromium --grep "$GREP" --workers=$WORKERS --pass-with-no-tests
           else
-            bunx playwright test --project=chromium --grep "@smoke|@critical" --workers=$WORKERS
+            bunx playwright test --project=chromium --grep "@smoke|@critical" --workers=$WORKERS --pass-with-no-tests
           fi
 
       - name: Upload smoke test results
